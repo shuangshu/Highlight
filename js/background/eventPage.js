@@ -28,8 +28,10 @@ var myEventPage = {
         console.log("onRuntimeMessage");
         switch(message.id){
             case "onMouseEnterHighlight":
+                myContextMenu.setCurrentHighlightId(message.highlightId);
                 break;
             case "onMouseLeaveHighlight":
+                myContextMenu.setCurrentHighlightId(message.highlightId);
                 break;
         }
     },

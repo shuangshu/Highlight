@@ -2,6 +2,13 @@
  * Created by gft060 on 2016/3/8.
  */
 var myContextMenu = {
+
+    currentHighlightId : null,
+
+    setCurrentHighlightId: function (id) {
+        myContextMenu.currentHighlightId = id;
+    },
+
     createMenus:function(){
         chrome.contextMenus.removeAll();
         var parentID = chrome.contextMenus.create({
@@ -29,7 +36,7 @@ var myContextMenu = {
             var command = result[1];
             var className = result[2];
             switch (command){
-                case "add_highlight":
+                case "addHighlight":
                     myTabs.sendGetSelectionRangeMessage(tab.id,function(xpathRange){
                         if (xpathRange && !xpathRange.collapsed){
                             myTabs.sendCreateHighlightMessage(tab.id,
@@ -37,13 +44,32 @@ var myContextMenu = {
                                 className,
                                 myStringUtility.createUUID(),
                                 function(state){
-                                    console.log(state);
+                                    console.log("addHighlight:"+state);
                                 }
                             );
                         }
                     });
                     break;
-                case "remove_highlight":
+                case "updateHighlight":
+                    if(myContextMenu.currentHighlightId){
+                        myTabs.sendUpdateHighlightMessage(tab.id,
+                            myContextMenu.currentHighlightId,
+                            className,
+                            function(state){
+                                console.log("updateHighlight:"+state);
+                            }
+                        );
+                    }
+                    break;
+                case "removeHighlight":
+                    if(myContextMenu.currentHighlightId){
+                        myTabs.sendDeleteHighlightMessage(tab.id,
+                            myContextMenu.currentHighlightId,
+                            function(state){
+                                console.log("removeHighlight:"+state);
+                            }
+                        );
+                    }
                     break;
             }
         }

@@ -72,6 +72,7 @@ var myContext = {
     onMouseEnterHighlight: function () {
         var id = myContext.getHighlightId(this);
         if (id) {
+            console.log("onMouseEnterHighlight:" + id);
             chrome.runtime.sendMessage({
                 id: "onMouseEnterHighlight",
                 highlightId: id
@@ -79,9 +80,9 @@ var myContext = {
         }
     },
     onMouseLeaveHighlight: function () {
-        "use strict";
         var id =  myContext.getHighlightId(this);
         if (id) {
+            console.log("onMouseLeaveHighlight:" + id);
             chrome.runtime.sendMessage({
                 id: "onMouseLeaveHighlight",
                 highlightId: id

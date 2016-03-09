@@ -31,25 +31,25 @@ var myTabs = {
             }
         });
     },
-    sendCreateHighlightMessage: function (tabId, range, className, documentId, responseCallback) {
+    sendCreateHighlightMessage: function (tabId, range, className, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "createHighlight",
             range: range,
-            highlightId: documentId,
+            highlightId: highlightId,
             className: className
         }, responseCallback);
     },
-    sendUpdateHighlightMessage: function (tabId, documentId, className, responseCallback) {
+    sendUpdateHighlightMessage: function (tabId, highlightId, className, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "updateHighlight",
-            highlightId: documentId,
+            highlightId: highlightId,
             className: className
         }, responseCallback);
     },
-    sendDeleteHighlightMessage: function (tabId, documentId, responseCallback) {
+    sendDeleteHighlightMessage: function (tabId, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "deleteHighlight",
-            highlightId: documentId
+            highlightId: highlightId
         }, responseCallback);
     },
     sendGetSelectionRangeMessage: function (tabId, responseCallback) {
@@ -69,16 +69,16 @@ var myTabs = {
             highlightId: documentId,
         }, responseCallback);
     },
-    sendIsHighlightMessage: function (tabId, documentId, responseCallback) {
+    sendIsHighlightMessage: function (tabId, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "isHighlight",
-            highlightId: documentId
+            highlightId: highlightId
         }, responseCallback);
     },
-    sendScrollToMessage: function (tabId, documentId, responseCallback) {
+    sendScrollToMessage: function (tabId, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "scrollTo",
-            fragment: documentId
+            fragment: highlightId
         }, responseCallback);
     }
 };
