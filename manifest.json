@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "highlight",
+  "version": "0.0.1",
+  "description": "_highlight_description_",
+  "icons": {
+    "16": "images/16.png",
+    "19": "images/19.png",
+    "32": "images/32.png",
+    "38": "images/38.png",
+    "48": "images/48.png",
+    "64": "images/64.png",
+    "96": "images/96.png",
+    "128": "images/128.png",
+    "256": "images/256.png"
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_title": "_highlight_title_",
+    "default_icon": {
+      "19": "images/19.png",
+      "38": "images/38.png"
+    }
+  },
+  "author": "_highlight_author_",
+  "background": {
+    "scripts": [
+      "static/js/jquery-2.1.1.min.js",
+      "static/js/jquery.stylesheet.min.js",
+      "js/common.js",
+      "js/background/contextMenu.js",
+      "js/background/eventPage.js",
+      "js/background/tab.js"
+    ],
+    "persistent": false
+  },
+  "commands": {
+    "add_highlight": {
+      "name": "add_highlight",
+      "description": "add highlight"
+    },
+    "remove_highlight": {
+      "name":"remove_highlight",
+      "description": "remove highlight"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "options_page": "options.html",
+  "permissions": [
+    "clipboardWrite",
+    "tts",
+    "storage",
+    "contextMenus",
+    "unlimitedStorage",
+    "webNavigation",
+    "tabs",
+    "<all_urls>"
+  ]
+}
