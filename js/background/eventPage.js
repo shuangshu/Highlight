@@ -45,8 +45,17 @@ var myEventPage = {
         if (details.frameId !== 0) {
             return;
         }
+        var scripts = 0;
         myTabs.executeScripts(details.tabId, false, function (){
-            console.log("executeScript-ok");
+            scripts++;
+            if(scripts == 7){
+                myWeb.open();
+                var msg = {
+                    "cmd":"gethighlight",
+                    "data": details.url
+                };
+                myWeb.sendMsg(JSON.stringify(msg));
+            }
         });
     },
 

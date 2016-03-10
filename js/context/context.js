@@ -67,7 +67,6 @@ var myContext = {
     },
     onChanged: function (changes, namespace) {
         console.log("storage change");
-
     },
     onMouseEnterHighlight: function () {
         var id = myContext.getHighlightId(this);

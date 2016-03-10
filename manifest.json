@@ -30,7 +30,8 @@
       "js/common.js",
       "js/background/contextMenu.js",
       "js/background/eventPage.js",
-      "js/background/tab.js"
+      "js/background/tab.js",
+      "js/background/web.js"
     ],
     "persistent": false
   },
@@ -38,10 +39,6 @@
     "addHighlight": {
       "name": "addHighlight",
       "description": "add highlight"
-    },
-    "updateHighlight":{
-      "name": "updateHighlight",
-      "description": "update highlight"
     },
     "removeHighlight": {
       "name":"removeHighlight",
