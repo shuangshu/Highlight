@@ -30,12 +30,16 @@ var myXPath = {
         return paths.length ? "/" + paths.join("/") : null;
     },
     createXPathRangeByRange: function (range) {
-        return{
+        var xpathRange = {
             startContainerPath: this.getXPathByNode(range.startContainer),
             startOffset: range.startOffset,
             endContainerPath: this.getXPathByNode(range.endContainer),
             endOffset: range.endOffset,
             collapsed: range.collapsed
+        }
+        return{
+            xpathRange : xpathRange,
+            rangeText : range.toString()
         };
     },
     createRangeByXPathRange: function (xpathRange) {

@@ -6,34 +6,45 @@ var myWeb = {
 
     socket : null,
 
+    currentURL : null,
+
     open : function(){
         try{
-            socket = new WebSocket('ws://localhost:12001');
-            socket.onopen = this.onOpen;
-            socket.onclose = this.onClose;
-            socket.onmessage = this.onMessage;
-            socket.onerror = this.onError;
+            if(this.socket == null){
+                this.socket = new WebSocket('ws://localhost:12001');
+                this.socket.onopen = this.onOpen;
+                this.socket.onclose = this.onClose;
+                this.socket.onmessage = this.onMessage;
+                this.socket.onerror = this.onError;
+            }
         }
         catch (e){
-            socket = null;
+            this.socket = null;
             console.log(e);
         }
     },
 
     close: function(){
-        if(!socket && socket.readyState != 1)
+        if(!this.socket || this.socket.readyState != 1)
             return;
-        socket.close();
+        this.socket.close();
+        this.socket = null;
     },
 
     sendMsg : function(data){
-        if(!socket && socket.readyState != 1)
+        if(!this.socket || this.socket.readyState != 1)
             return;
-        socket.send(data);
+        this.socket.send(data);
     },
 
     onOpen : function(event){
-        console.log('onclose',event);
+        if(this.currentURL == null)
+            return;
+        var msg = {
+            "key":"QUERY",
+            "value": myWeb.currentURL
+        };
+        this.sendMsg(JSON.stringify(msg));
     },
 
     onClose : function(event){
@@ -41,7 +52,16 @@ var myWeb = {
     },
 
     onMessage : function(event){
-        console.log('onMessage',event);
+        if(!event.data || event.data.length == 0)
+            return;
+        var data = JSON.parse(event.data);
+        switch (data.key){
+            case "QUERY":
+                data.value.forEach(function (val) {
+                    console.log(val);
+                });
+                break;
+        }
     },
 
     onError: function(event){

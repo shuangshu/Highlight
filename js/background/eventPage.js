@@ -15,17 +15,14 @@ var myEventPage = {
     },
 
     onRuntimeInstalled : function(details){
-        console.log("onRuntimeInstalled: " + JSON.stringify(details));
-        alert("onRuntimeInstalled");
-        myContextMenu.createMenus();
+        console.log(details);
     },
 
     onRuntimeStartup:function(){
-        console.log("onRuntimeStartup");
+        console.log(details);
     },
 
     onRuntimeMessage: function (message, sender, sendResponse) {
-        console.log("onRuntimeMessage");
         switch(message.id){
             case "onMouseEnterHighlight":
                 myContextMenu.setCurrentHighlightId(message.highlightId);
@@ -37,11 +34,11 @@ var myEventPage = {
     },
 
     onTabActivated: function (activeInfo) {
-        console.log("onTabActivated");
         myContextMenu.createMenus();
     },
 
     onWebNavigationCompleted : function(details){
+
         if (details.frameId !== 0) {
             return;
         }
@@ -49,18 +46,14 @@ var myEventPage = {
         myTabs.executeScripts(details.tabId, false, function (){
             scripts++;
             if(scripts == 7){
+                myWeb.currentURL = details.url;
                 myWeb.open();
-                var msg = {
-                    "cmd":"gethighlight",
-                    "data": details.url
-                };
-                myWeb.sendMsg(JSON.stringify(msg));
             }
         });
     },
 
     onCommandsCommand : function(command){
-        console.log(command);
+        //TODO
     }
 };
 

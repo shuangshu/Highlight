@@ -9,10 +9,30 @@ var myContextMenu = {
         myContextMenu.currentHighlightId = id;
     },
 
+    removeMenus:function(){
+        chrome.contextMenus.removeAll();
+    },
+
+    removeMenu : function(id){
+        chrome.contextMenus.remove(id);
+    },
+
+    enableMenus:function(flag){
+        chrome.commands.getAll(function (commands) {
+            commands.forEach(function(command){
+                var id = command.name+".default";
+                chrome.contextMenus.update(id,{
+                    parentId : '6A7D6A59C4BF4908B3310F97C529B366',
+                    enabled : flag
+                },null);
+            });
+        });
+    },
+
     createMenus:function(){
         chrome.contextMenus.removeAll();
-        var parentID = chrome.contextMenus.create({
-            "id": "da7cb902-89c6-46fe-b0e7-d3b35aaf237a",
+        var parentId = chrome.contextMenus.create({
+            "id": "6A7D6A59C4BF4908B3310F97C529B366",
             "title": chrome.runtime.getManifest().name,
             "contexts": ["selection"]
         });
@@ -20,15 +40,17 @@ var myContextMenu = {
             commands.forEach(function(command){
                 var option = {
                     type: "normal",
-                    id: command.name+".default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce",//command + className
-                    parentId: parentID,
+                    id: command.name+".default",
+                    parentId: '6A7D6A59C4BF4908B3310F97C529B366',
                     title: command.description,
-                    contexts:["selection"]
+                    contexts:['selection'],
+                    enabled : true
                 }
-                chrome.contextMenus.create(option);
+                addMenuId = chrome.contextMenus.create(option);
             });
         });
     },
+
     onClicked: function (info,tab) {
         var regExp = new RegExp("^(.+)\\.(.+)");
         var result = regExp.exec(info.menuItemId);
@@ -36,37 +58,51 @@ var myContextMenu = {
             var command = result[1];
             var className = result[2];
             switch (command){
-                case "addHighlight":
-                    myTabs.sendGetSelectionRangeMessage(tab.id,function(xpathRange){
-                        if (xpathRange && !xpathRange.collapsed){
+                case 'addHighlight':
+                    myTabs.sendGetSelectionRangeMessage(tab.id,function(response){
+                        if (response &&
+                            response.xpathRange &&
+                            !response.xpathRange.collapsed){
                             myTabs.sendCreateHighlightMessage(tab.id,
-                                xpathRange,
+                                response.xpathRange,
                                 className,
                                 myStringUtility.createUUID(),
                                 function(state){
-                                    console.log("addHighlight:"+state);
+                                    var data = {
+                                        xpath : JSON.stringify(response.xpathRange),
+                                        text : response.rangeText,
+                                        url : myWeb.currentURL
+                                    };
+                                    var msg = {
+                                        key : "CREATE",
+                                        value : JSON.stringify(data)
+                                    }
+                                    myWeb.sendMsg(JSON.stringify(msg));
                                 }
                             );
                         }
                     });
                     break;
-                case "updateHighlight":
+                case 'updateHighlight':
                     if(myContextMenu.currentHighlightId){
                         myTabs.sendUpdateHighlightMessage(tab.id,
                             myContextMenu.currentHighlightId,
                             className,
                             function(state){
-                                console.log("updateHighlight:"+state);
                             }
                         );
                     }
                     break;
-                case "removeHighlight":
+                case 'removeHighlight':
                     if(myContextMenu.currentHighlightId){
                         myTabs.sendDeleteHighlightMessage(tab.id,
                             myContextMenu.currentHighlightId,
                             function(state){
-                                console.log("removeHighlight:"+state);
+                                var msg = {
+                                    key : "DELETE",
+                                    value : myContextMenu.currentHighlightId
+                                }
+                                myWeb.sendMsg(JSON.stringify(msg));
                             }
                         );
                     }
@@ -74,5 +110,4 @@ var myContextMenu = {
             }
         }
     },
-
 }

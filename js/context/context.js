@@ -16,7 +16,7 @@ var myContext = {
         }, "." + myContext.highlightClassName);
         $(document).ready(function(){
             var def = {
-                "className" : "default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce",
+                "className" : "default",
                 "style" : {}
             }
             myStylesheet.setHighlightStyle(def);
