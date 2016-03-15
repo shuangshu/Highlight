@@ -14,15 +14,8 @@ var myContext = {
             mouseenter: myContext.onMouseEnterHighlight,
             mouseleave: myContext.onMouseLeaveHighlight
         }, "." + myContext.highlightClassName);
-        $(document).ready(function(){
-            var def = {
-                "className" : "default",
-                "style" : {}
-            }
-            myStylesheet.setHighlightStyle(def);
-        });
     },
-    getHighlightId: function (element) {
+    getHighlightID: function (element) {
         if (!element.prevSpan) {
             return;
         }
@@ -45,6 +38,12 @@ var myContext = {
                 if (message.highlightId && range) {
                     response = myXPath.createXPathRangeByRange(range);
                 }
+                break;
+            case "getHighlightTextByID":
+                response = myContext.getHighlightTextByID(message.highlightId);
+                break;
+            case "getHighlightTextByClass":
+                response = myContext.getHighlightTextByClass(message.className);
                 break;
             case "isHighlight":
                 response = myContext.isHighlight(message.id);
@@ -69,9 +68,8 @@ var myContext = {
         console.log("storage change");
     },
     onMouseEnterHighlight: function () {
-        var id = myContext.getHighlightId(this);
+        var id = myContext.getHighlightID(this);
         if (id) {
-            console.log("onMouseEnterHighlight:" + id);
             chrome.runtime.sendMessage({
                 id: "onMouseEnterHighlight",
                 highlightId: id
@@ -79,9 +77,8 @@ var myContext = {
         }
     },
     onMouseLeaveHighlight: function () {
-        var id =  myContext.getHighlightId(this);
+        var id =  myContext.getHighlightID(this);
         if (id) {
-            console.log("onMouseLeaveHighlight:" + id);
             chrome.runtime.sendMessage({
                 id: "onMouseLeaveHighlight",
                 highlightId: id
@@ -133,6 +130,12 @@ var myContext = {
     isHighlight: function (id) {
         return $('#' + id).length === 1;
     },
+    getHighlightTextByID:function(highlightId){
+        return myHighlight.getHighlightTextByID(highlightId);
+    },
+    getHighlightTextByClass:function(className){
+        return myHighlight.getHighlightTextByClass(className);
+    },
     scrollTo: function (selector) {
         var $elm = $(selector);
         if ($elm) {
@@ -141,6 +144,6 @@ var myContext = {
             }, 'slow');
         }
         return $elm !== null;
-    },
+    }
 };
 myContext.initialize();

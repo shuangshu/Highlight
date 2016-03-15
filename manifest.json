@@ -33,16 +33,25 @@
       "js/background/tab.js",
       "js/background/web.js"
     ],
+
     "persistent": false
   },
   "commands": {
-    "addHighlight": {
-      "name": "addHighlight",
+    "CREATE": {
+      "name": "CREATE",
       "description": "add highlight"
     },
-    "removeHighlight": {
-      "name":"removeHighlight",
+    "DELETE": {
+      "name":"DELETE",
       "description": "remove highlight"
+    },
+    "SEARCH": {
+      "name":"SEARCH",
+      "description": "search"
+    },
+    "SEARCHALL":{
+      "name":"SEARCHALL",
+      "description": "search All"
     }
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",

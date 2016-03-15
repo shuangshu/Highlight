@@ -5,65 +5,99 @@
 var myWeb = {
 
     socket : null,
-
     currentURL : null,
-
+    currentTabID : null,
     open : function(){
         try{
-            if(this.socket == null){
-                this.socket = new WebSocket('ws://localhost:12001');
-                this.socket.onopen = this.onOpen;
-                this.socket.onclose = this.onClose;
-                this.socket.onmessage = this.onMessage;
-                this.socket.onerror = this.onError;
+            if(myWeb.socket == null){
+                myWeb.socket = new WebSocket('ws://localhost:12001');
+                myWeb.socket.onerror = myWeb.onError;
+                myWeb.socket.onopen = myWeb.onOpen;
+                myWeb.socket.onclose = myWeb.onClose;
+                myWeb.socket.onmessage = myWeb.onMessage;
             }
         }
         catch (e){
-            this.socket = null;
+            myWeb.socket = null;
             console.log(e);
         }
     },
-
     close: function(){
-        if(!this.socket || this.socket.readyState != 1)
+        if(!myWeb.socket)
             return;
-        this.socket.close();
-        this.socket = null;
+        myWeb.socket.close();
+        myWeb.socket = null;
     },
-
     sendMsg : function(data){
-        if(!this.socket || this.socket.readyState != 1)
-            return;
-        this.socket.send(data);
+        if(!myWeb.socket || myWeb.socket.readyState != 1){
+            myWeb.close();//try again
+            myWeb.open();
+        }
+        if(myWeb.socket.readyState != 1){
+            setTimeout(function(){
+                myWeb.socket.send(data);
+            },1000);
+        }else {
+            myWeb.socket.send(data);
+        }
     },
-
     onOpen : function(event){
-        if(this.currentURL == null)
+        if(myWeb.currentURL == null)
             return;
         var msg = {
             "key":"QUERY",
             "value": myWeb.currentURL
         };
-        this.sendMsg(JSON.stringify(msg));
+        myWeb.sendMsg(JSON.stringify(msg));
     },
-
     onClose : function(event){
         console.log('onClose',event);
     },
-
     onMessage : function(event){
         if(!event.data || event.data.length == 0)
             return;
-        var data = JSON.parse(event.data);
-        switch (data.key){
-            case "QUERY":
-                data.value.forEach(function (val) {
-                    console.log(val);
-                });
-                break;
+        try{
+            var data = JSON.parse(event.data);
+            switch (data.key){
+                case "QUERY":
+                    data.value.forEach(function (val) {
+                        var id = val.key;
+                        if(val.value && val.value.length > 0){
+                            var xpathRange = JSON.parse(val.value);
+                            var className = "default-4B8192F5FBC945A49212026FF891A28B";
+                            myTabs.sendCreateHighlightMessage(myWeb.currentTabID,
+                                xpathRange,
+                                className,
+                                id,
+                                function(state){
+                                });
+                        }
+                    });
+                    break;
+                case "CREATE":
+                    var obj = JSON.parse(data.value);
+                    var xpathRange = JSON.parse(obj.xpath);
+                    var text = obj.text;
+                    var id = obj.id;
+                    var className = "default-4B8192F5FBC945A49212026FF891A28B";
+                    myTabs.sendCreateHighlightMessage(myWeb.currentTabID, xpathRange, className, id,
+                        function(state){
+                        }
+                    );
+                    break;
+                case "DELETE":
+                    var id = data.value;
+                    myTabs.sendDeleteHighlightMessage(myWeb.currentTabID, id,
+                        function(state){
+                        }
+                    );
+                    break;
+            }
+        }
+        catch (error){
+            console.log(error);
         }
     },
-
     onError: function(event){
         console.log('onError',event);
     }

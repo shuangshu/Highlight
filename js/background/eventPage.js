@@ -10,48 +10,56 @@ var myEventPage = {
         chrome.runtime.onMessage.addListener(myEventPage.onRuntimeMessage);
         chrome.webNavigation.onCompleted.addListener(myEventPage.onWebNavigationCompleted);
         chrome.tabs.onActivated.addListener(myEventPage.onTabActivated);
-        chrome.contextMenus.onClicked.addListener(myContextMenu.onClicked);
+        chrome.tabs.onUpdated.addListener(myEventPage.onTabUpdated);
         chrome.commands.onCommand.addListener(myEventPage.onCommandsCommand);
+        chrome.contextMenus.onClicked.addListener(myContextMenu.onClicked);
     },
-
     onRuntimeInstalled : function(details){
         console.log(details);
     },
-
     onRuntimeStartup:function(){
         console.log(details);
     },
-
     onRuntimeMessage: function (message, sender, sendResponse) {
         switch(message.id){
             case "onMouseEnterHighlight":
-                myContextMenu.setCurrentHighlightId(message.highlightId);
+                myContextMenu.setCurrentHighlightID(message.highlightId);
                 break;
             case "onMouseLeaveHighlight":
-                myContextMenu.setCurrentHighlightId(message.highlightId);
+                myContextMenu.setCurrentHighlightID(message.highlightId);
                 break;
         }
     },
-
-    onTabActivated: function (activeInfo) {
-        myContextMenu.createMenus();
-    },
-
-    onWebNavigationCompleted : function(details){
-
-        if (details.frameId !== 0) {
+    onTabUpdated : function(tabId, changeInfo, tab){
+        if(tab.url.indexOf("chrome://newtab/") >=0 ||
+            tab.url.indexOf("chrome://extensions/") >=0){
             return;
         }
-        var scripts = 0;
-        myTabs.executeScripts(details.tabId, false, function (){
-            scripts++;
-            if(scripts == 7){
-                myWeb.currentURL = details.url;
-                myWeb.open();
-            }
+        myWeb.currentURL = tab.url;
+        myWeb.currentTabID = tab.id;
+        if(tab.status == "complete"){
+            myTabs.insertCSS(tab.id,function(){
+            });
+            var scripts = 0;
+            myTabs.executeScripts(tab.id, function (){
+                scripts++;
+                if(scripts == 8){
+                    myWeb.close();
+                    myWeb.open();
+                }
+            });
+        }
+    },
+    onTabActivated: function (activeInfo) {
+        myContextMenu.createMenus();
+        myTabs.getTab(activeInfo.tabId, function (tab) {
+            myWeb.currentURL = tab.url;
+            myWeb.currentTabID = tab.id;
         });
     },
-
+    onWebNavigationCompleted : function(details){
+        //TODO
+    },
     onCommandsCommand : function(command){
         //TODO
     }

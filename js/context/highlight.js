@@ -2,7 +2,6 @@
  * Created by gft060 on 2016/3/8.
  */
 var myHighlight = {
-
     createHighlight : function(range, id, className){
         function _create(range, record, createCallback) {
             if (range.collapsed) {
@@ -158,5 +157,20 @@ var myHighlight = {
             node.nodeType === Node.ELEMENT_NODE &&
             node.nodeName === "SPAN" &&
             node.prevSpan !== undefined;
-    }
+    },
+    getHighlightTextByID : function(highlightId){
+        var text = "";
+        if(highlightId){
+            text = myHighlight.getRange(highlightId).toString();
+        }
+        return text;
+    },
+    getHighlightTextByClass : function(className){
+        var text = "";
+        $("."+className).each(function(index,element){
+            text += element.innerText;
+            text += " ";
+        });
+        return text;
+    },
 };

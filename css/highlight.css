@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.default-4B8192F5FBC945A49212026FF891A28B {
+    background-color : rgba(255, 128, 128, 0.8);
+    color : rgb(0, 0, 0);
+    font-style : inherit;
+    box-shadow : rgb(255, 128, 128) 0px 0px 8px;
+    transition-duration: 0.1s, 0.1s, 0.1s;
+    transition-property : color, background-color, box-shadow;
+    transition-timing-function : linear, linear, linear;
+    border-radius : 0.2em;
+    cursor: default;
+}
+
+.default-4B8192F5FBC945A49212026FF891A28B:hover{
+    cursor: pointer;
+}
