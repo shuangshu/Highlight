@@ -5,6 +5,7 @@ var myContextMenu = {
 
     currentHighlightID : null,
     currentFocusID : null,
+
     setCurrentHighlightID: function (id) {
         myContextMenu.currentHighlightID = id;
     },

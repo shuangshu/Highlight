@@ -95,7 +95,7 @@ var myHighlight = {
         });
         return spanNode.prevSpan;
     },
-    updateHighlight: function (id, className) {
+    updateHighlight : function (id, className) {
         var span = document.getElementById(id);
         if (!this.isHighlight(span)) {
             return false;
@@ -108,7 +108,7 @@ var myHighlight = {
 
         return true;
     },
-    deleteHighlight: function (id) {
+    deleteHighlight : function (id) {
         var span = document.getElementById(id);
         if (!this.isHighlight(span)) {
             return false;
@@ -140,7 +140,7 @@ var myHighlight = {
 
         return true;
     },
-    getRange: function (id) {
+    getRange : function (id) {
         var span = document.getElementById(id);
         var range = document.createRange();
         while (this.isHighlight(span)) {
@@ -152,7 +152,7 @@ var myHighlight = {
         }
         return range;
     },
-    isHighlight: function (node) {
+    isHighlight : function (node) {
         return node &&
             node.nodeType === Node.ELEMENT_NODE &&
             node.nodeName === "SPAN" &&

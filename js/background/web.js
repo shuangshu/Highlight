@@ -3,7 +3,6 @@
  */
 
 var myWeb = {
-
     socket : null,
     currentURL : null,
     currentTabID : null,

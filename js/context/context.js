@@ -3,10 +3,8 @@
  */
 
 var myContext = {
-
     highlightClassName: null,
-
-    initialize:function(){
+    initialize : function(){
         myContext.highlightClassName = myStringUtility.createUUID();
         chrome.storage.onChanged.addListener(myContext.onChanged);
         chrome.runtime.onMessage.addListener(myContext.onRuntimeMessage);
@@ -15,13 +13,13 @@ var myContext = {
             mouseleave: myContext.onMouseLeaveHighlight
         }, "." + myContext.highlightClassName);
     },
-    getHighlightID: function (element) {
+    getHighlightID : function (element) {
         if (!element.prevSpan) {
             return;
         }
         return element.prevSpan.id;
     },
-    onRuntimeMessage:function(message, sender, sendResponse){
+    onRuntimeMessage : function(message, sender, sendResponse){
         var response;
         switch (message.id){
             case "createHighlight":
@@ -64,10 +62,10 @@ var myContext = {
         }
         sendResponse(response);
     },
-    onChanged: function (changes, namespace) {
+    onChanged : function (changes, namespace) {
         console.log("storage change");
     },
-    onMouseEnterHighlight: function () {
+    onMouseEnterHighlight : function () {
         var id = myContext.getHighlightID(this);
         if (id) {
             chrome.runtime.sendMessage({
@@ -76,7 +74,7 @@ var myContext = {
             });
         }
     },
-    onMouseLeaveHighlight: function () {
+    onMouseLeaveHighlight : function () {
         var id =  myContext.getHighlightID(this);
         if (id) {
             chrome.runtime.sendMessage({
@@ -97,10 +95,10 @@ var myContext = {
         }
         return range;
     },
-    isSelectionCollapsed: function () {
+    isSelectionCollapsed : function () {
         return window.getSelection().isCollapsed;
     },
-    createHighlight :function(xpathRange, id, className){
+    createHighlight : function(xpathRange, id, className){
         var range;
         try {
             range = myXPath.createRangeByXPathRange(xpathRange);
@@ -112,10 +110,10 @@ var myContext = {
         }
         return myHighlight.createHighlight(range, id, [myContext.highlightClassName, className]);
     },
-    deleteHighlight: function (id) {
+    deleteHighlight : function (id) {
         return myHighlight.deleteHighlight(id);
     },
-    selectHighlight: function (id) {
+    selectHighlight : function (id) {
         var selection = window.getSelection();
         selection.removeAllRanges();
         if (id) {
@@ -124,19 +122,19 @@ var myContext = {
             return range;
         }
     },
-    updateHighlight: function (id, className) {
+    updateHighlight : function (id, className) {
         return myHighlight.updateHighlight(id, [myContext.highlightClassName, className]);
     },
-    isHighlight: function (id) {
+    isHighlight : function (id) {
         return $('#' + id).length === 1;
     },
-    getHighlightTextByID:function(highlightId){
+    getHighlightTextByID : function(highlightId){
         return myHighlight.getHighlightTextByID(highlightId);
     },
-    getHighlightTextByClass:function(className){
+    getHighlightTextByClass : function(className){
         return myHighlight.getHighlightTextByClass(className);
     },
-    scrollTo: function (selector) {
+    scrollTo : function (selector) {
         var $elm = $(selector);
         if ($elm) {
             $('body').animate({

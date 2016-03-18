@@ -1,0 +1,26 @@
+{
+  "highlight" : {
+    "message": "highlight"
+  },
+  "title" : {
+    "message":"title"
+  },
+  "description":{
+    "message":"description"
+  },
+  "add": {
+    "message":"add"
+  },
+  "update": {
+    "message":"update"
+  },
+  "remove": {
+    "message":"remove"
+  },
+  "search": {
+    "message":"search"
+  },
+  "searchAll": {
+    "message":"remove"
+  }
+}

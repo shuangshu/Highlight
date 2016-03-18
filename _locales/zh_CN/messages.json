@@ -1,0 +1,26 @@
+{
+  "highlight" : {
+    "message": "高亮"
+  },
+  "title" : {
+    "message":"高亮"
+  },
+  "description" : {
+    "message":"高亮"
+  },
+  "add": {
+    "message":"添加"
+  },
+  "update": {
+    "message":"更新"
+  },
+  "remove": {
+    "message":"移除"
+  },
+  "search": {
+    "message":"搜索"
+  },
+  "searchAll": {
+    "message":"搜索全部"
+  }
+}

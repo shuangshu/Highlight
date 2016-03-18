@@ -1,28 +1,27 @@
 {
   "manifest_version": 2,
-  "name": "highlight",
+  "name": "__MSG_highlight__",
   "version": "0.0.1",
-  "description": "_highlight_description_",
+  "default_locale":"zh_CN",
+  "description": "__MSG_description__",
   "icons": {
     "16": "images/16.png",
-    "19": "images/19.png",
+    "24": "images/24.png",
     "32": "images/32.png",
-    "38": "images/38.png",
     "48": "images/48.png",
     "64": "images/64.png",
     "96": "images/96.png",
-    "128": "images/128.png",
-    "256": "images/256.png"
+    "128": "images/128.png"
   },
   "page_action": {
     "default_popup": "popup.html",
-    "default_title": "_highlight_title_",
+    "default_title": "___MSG_title_",
     "default_icon": {
-      "19": "images/19.png",
-      "38": "images/38.png"
+      "24": "images/24.png",
+      "32": "images/32.png"
     }
   },
-  "author": "_highlight_author_",
+  "author": "___MSG_author_",
   "background": {
     "scripts": [
       "static/js/jquery-2.1.1.min.js",
@@ -39,19 +38,23 @@
   "commands": {
     "CREATE": {
       "name": "CREATE",
-      "description": "add highlight"
+      "description": "__MSG_add__"
+    },
+    "UPDATE": {
+      "name":"UPDATE",
+      "description": "__MSG_update__"
     },
     "DELETE": {
       "name":"DELETE",
-      "description": "remove highlight"
+      "description": "__MSG_remove__"
     },
     "SEARCH": {
       "name":"SEARCH",
-      "description": "search"
+      "description": "__MSG_search__"
     },
     "SEARCHALL":{
       "name":"SEARCHALL",
-      "description": "search All"
+      "description": "__MSG_searchAll__"
     }
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
