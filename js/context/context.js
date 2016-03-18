@@ -14,10 +14,10 @@ var myContext = {
         }, "." + myContext.highlightClassName);
     },
     getHighlightID : function (element) {
-        if (!element.prevSpan) {
-            return;
+        if (!element.firstSpan) {
+            return null;
         }
-        return element.prevSpan.id;
+        return element.firstSpan.id;
     },
     onRuntimeMessage : function(message, sender, sendResponse){
         var response;
@@ -53,6 +53,15 @@ var myContext = {
                 var range = myXPath.createRangeByXPathRange(message.range);
                 response = range ? range.toString() : null;
                 break;
+            case "isFocus":
+                response = myContext.isFocus(message.highlightId);
+                break;
+            case "setFocus":
+                response = myContext.setFocus(message.highlightId,message.className);
+                break;
+            case "getFocus":
+                response = myContext.getFocus();
+                break;
             case "scrollTo":
                 response = myContext.scrollTo("#" + message.fragment);
                 break;
@@ -67,21 +76,17 @@ var myContext = {
     },
     onMouseEnterHighlight : function () {
         var id = myContext.getHighlightID(this);
-        if (id) {
-            chrome.runtime.sendMessage({
-                id: "onMouseEnterHighlight",
-                highlightId: id
-            });
-        }
+        chrome.runtime.sendMessage({
+            id: "onMouseLeaveHighlight",
+            highlightId: id
+        });
     },
     onMouseLeaveHighlight : function () {
         var id =  myContext.getHighlightID(this);
-        if (id) {
-            chrome.runtime.sendMessage({
-                id: "onMouseLeaveHighlight",
-                highlightId: id
-            });
-        }
+        chrome.runtime.sendMessage({
+            id: "onMouseLeaveHighlight",
+            highlightId: id
+        });
     },
     getSelectionRange : function(){
         var range;
@@ -95,9 +100,7 @@ var myContext = {
         }
         return range;
     },
-    isSelectionCollapsed : function () {
-        return window.getSelection().isCollapsed;
-    },
+    //Begin Highlight
     createHighlight : function(xpathRange, id, className){
         var range;
         try {
@@ -134,6 +137,18 @@ var myContext = {
     getHighlightTextByClass : function(className){
         return myHighlight.getHighlightTextByClass(className);
     },
+    //End Highlight
+    //Begin Focus
+    isFocus : function(highlightId,className){
+        return myFocus.isFocus(highlightId,className)
+    },
+    setFocus : function(highlightId,className){
+        myFocus.setFocus(highlightId,className);
+    },
+    getFocus : function(className){
+        return myFocus.getFocus(className);
+    },
+    //End Focus
     scrollTo : function (selector) {
         var $elm = $(selector);
         if ($elm) {

@@ -3,23 +3,18 @@
  */
 
 var myFocus = {
-
-    focusClassName : "default-Focus-C1ED9F669907455394ED16E821796071",
-
-    isFocus : function(id){
+    isFocus : function(id,className){
         var el = $('#' + id);
         if(el.length === 1 &&
-            el.className === focusClassName){
+            el.className === className){
             return true;
         }
         return false;
     },
-
-    setFocus : function(id){
-        myHighlight.updateHighlight(id,focusClassName);
+    setFocus : function(id,className){
+        myHighlight.updateHighlight(id,className);
     },
-
-    getFocus : function(){
+    getFocus : function(className){
         var array = [];
         $("."+className).each(function(index,element){
             array.push(element);

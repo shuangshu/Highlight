@@ -17,6 +17,9 @@
   "remove": {
     "message":"移除"
   },
+  "focus":{
+    "message":"焦点"
+  },
   "search": {
     "message":"搜索"
   },

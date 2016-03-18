@@ -2,16 +2,37 @@
  * Created by gft060 on 2016/3/8.
  */
 var myHighlight = {
-    createHighlight : function(range, id, className){
-        function _create(range, record, createCallback) {
+    getRange : function (id) {
+        var span = document.getElementById(id);
+        var range = document.createRange();
+        while (this.isHighlight(span)) {
+            if (range.collapsed) {
+                range.setStartBefore(span);
+            }
+            range.setEndAfter(span);
+            span = span.lastSpan;
+        }
+        return range;
+    },
+    createHighlight : function(range, id, className) {
+        var span = document.createElement("SPAN");
+        span.className = (className instanceof Array ? className.join(" ") : className);
+        var spanNode = {
+            firstSpan: null,
+            lastSpan: null
+        };
+        function _doCreate(range, spanNode, createCallback) {
             if (range.collapsed) {
                 return;
             }
-            var startSide = range.startContainer, endSide = range.endContainer, ancestor = range.commonAncestorContainer, isNodeLeaf = true;
+            var startSide = range.startContainer, endSide = range.endContainer,
+                ancestor = range.commonAncestorContainer, IsLeaf = true;
+
             if (range.endOffset === 0) {
                 while (!endSide.previousSibling && endSide.parentNode !== ancestor) {
                     endSide = endSide.parentNode;
                 }
+
                 endSide = endSide.previousSibling;
             } else if (endSide.nodeType === Node.TEXT_NODE) {
                 if (range.endOffset < endSide.nodeValue.length) {
@@ -22,9 +43,10 @@ var myHighlight = {
             }
             if (startSide.nodeType === Node.TEXT_NODE) {
                 if (range.startOffset === startSide.nodeValue.length) {
-                    isNodeLeaf = false;
+                    IsLeaf = false;
                 } else if (range.startOffset > 0) {
                     startSide = startSide.splitText(range.startOffset);
+
                     if (endSide === startSide.previousSibling) {
                         endSide = startSide;
                     }
@@ -32,68 +54,63 @@ var myHighlight = {
             } else if (range.startOffset < startSide.childNodes.length) {
                 startSide = startSide.childNodes.item(range.startOffset);
             } else {
-                isNodeLeaf = false;
+                IsLeaf = false;
             }
             range.setStart(range.startContainer, 0);
             range.setEnd(range.startContainer, 0);
             var done = false, node = startSide;
             do {
-                if (isNodeLeaf && node.nodeType === Node.TEXT_NODE &&
+                if (IsLeaf && node.nodeType === Node.TEXT_NODE &&
                     !(node.parentNode instanceof HTMLTableElement) &&
                     !(node.parentNode instanceof HTMLTableRowElement) &&
                     !(node.parentNode instanceof HTMLTableColElement) &&
                     !(node.parentNode instanceof HTMLTableSectionElement)) {
                     var wrap = node.previousSibling;
-                    if (!wrap || wrap !== record.nextSpan) {
+
+                    if (!wrap || wrap !== spanNode.lastSpan) {
                         wrap = createCallback(node);
                         node.parentNode.insertBefore(wrap, node);
                     }
                     wrap.appendChild(node);
                     node = wrap.lastChild;
-                    isNodeLeaf = false;
+                    IsLeaf = false;
                 }
 
-                if (node === endSide && (!endSide.hasChildNodes() || !isNodeLeaf)) {
+                if (node === endSide && (!endSide.hasChildNodes() || !IsLeaf)) {
                     done = true;
                 }
 
                 if (node instanceof HTMLScriptElement ||
                     node instanceof HTMLStyleElement ||
                     node instanceof HTMLSelectElement) {
-                    isNodeLeaf = false;
+                    IsLeaf = false;
                 }
 
-                if (isNodeLeaf && node.hasChildNodes()) {
+                if (IsLeaf && node.hasChildNodes()) {
                     node = node.firstChild;
                 } else if (node.nextSibling !== null) {
                     node = node.nextSibling;
-                    isNodeLeaf = true;
+                    IsLeaf = true;
                 } else if (node.nextSibling === null) {
                     node = node.parentNode;
-                    isNodeLeaf = false;
+                    IsLeaf = false;
                 }
             } while (!done);
         }
-        var span = document.createElement("SPAN");
-        span.className = (className instanceof Array ? className.join(" ") : className);
-        var spanNode = {
-            prevSpan: null,
-            nextSpan: null
-        };
-        _create(range, spanNode, function () {
+        _doCreate(range, spanNode, function () {
             var newSpan = span.cloneNode(false);
-            if (!spanNode.prevSpan) {
-                spanNode.prevSpan = newSpan;
-                spanNode.prevSpan.id = id;
+            if (!spanNode.firstSpan) {
+                spanNode.firstSpan = newSpan;
+                spanNode.firstSpan.id = id;
             }
-            if (spanNode.nextSpan) {
-                spanNode.nextSpan.nextSpan = newSpan;
+            if (spanNode.lastSpan) {
+                spanNode.lastSpan.nextSpan = newSpan;
             }
-            spanNode.nextSpan = newSpan;
-            newSpan.prevSpan = spanNode.prevSpan;
+            spanNode.lastSpan = newSpan;
+            newSpan.firstSpan = spanNode.firstSpan;
             return newSpan;
         });
-        return spanNode.prevSpan;
+        return spanNode.firstSpan;
     },
     updateHighlight : function (id, className) {
         var span = document.getElementById(id);
@@ -113,15 +130,15 @@ var myHighlight = {
         if (!this.isHighlight(span)) {
             return false;
         }
-        function _merge(n) {
-            if (n.nodeType === Node.TEXT_NODE) {
-                if (n.nextSibling && n.nextSibling.nodeType === Node.TEXT_NODE) {
-                    n.textContent += n.nextSibling.textContent;
-                    n.nextSibling.parentNode.removeChild(n.nextSibling);
+        function _merge(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                if (node.nextSibling && node.nextSibling.nodeType === Node.TEXT_NODE) {
+                    node.textContent += node.nextSibling.textContent;
+                    node.nextSibling.parentNode.removeChild(node.nextSibling);
                 }
-                if (n.previousSibling && n.previousSibling.nodeType === Node.TEXT_NODE) {
-                    n.previousSibling.textContent += n.textContent;
-                    n.parentNode.removeChild(n);
+                if (node.previousSibling && node.previousSibling.nodeType === Node.TEXT_NODE) {
+                    node.previousSibling.textContent += node.textContent;
+                    node.parentNode.removeChild(node);
                 }
             }
         }
@@ -137,26 +154,13 @@ var myHighlight = {
             }
             span = nodeRemoved.nextSpan;
         }
-
         return true;
-    },
-    getRange : function (id) {
-        var span = document.getElementById(id);
-        var range = document.createRange();
-        while (this.isHighlight(span)) {
-            if (range.collapsed) {
-                range.setStartBefore(span);
-            }
-            range.setEndAfter(span);
-            span = span.nextSpan;
-        }
-        return range;
     },
     isHighlight : function (node) {
         return node &&
             node.nodeType === Node.ELEMENT_NODE &&
             node.nodeName === "SPAN" &&
-            node.prevSpan !== undefined;
+            node.firstSpan !== undefined;
     },
     getHighlightTextByID : function(highlightId){
         var text = "";
@@ -172,5 +176,5 @@ var myHighlight = {
             text += " ";
         });
         return text;
-    },
+    }
 };

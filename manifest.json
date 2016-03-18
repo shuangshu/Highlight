@@ -40,13 +40,13 @@
       "name": "CREATE",
       "description": "__MSG_add__"
     },
-    "UPDATE": {
-      "name":"UPDATE",
-      "description": "__MSG_update__"
-    },
     "DELETE": {
       "name":"DELETE",
       "description": "__MSG_remove__"
+    },
+    "FOCUS": {
+      "name":"FOCUS",
+      "description": "__MSG_focus__"
     },
     "SEARCH": {
       "name":"SEARCH",

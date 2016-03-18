@@ -13,7 +13,8 @@ var myTabs = {
             "js/context/stylesheet.js",
             "js/context/xpath.js",
             "js/context/context.js",
-            "js/context/highlight.js"
+            "js/context/highlight.js",
+            "js/context/focus.js"
         ].forEach(function (file) {
             var detail = {
                 file : file,
@@ -48,10 +49,19 @@ var myTabs = {
         });
     },
     getTab : function(tabId,callback){
-        chrome.tabs.get(tabId,function(tab){
-            if(callback){
-                callback(tab);
-            }
+        var queryInfo = {
+            "active":true
+        }
+        chrome.tabs.query(queryInfo,function(tabs){
+            tabs.forEach(function(tab){
+                if(tab.id == tabId){
+                    if(callback){
+                        callback(tab);
+                    }
+                    return;
+                }
+            });
+
         });
     },
     createTab : function(createProperties,callback){
@@ -68,6 +78,7 @@ var myTabs = {
             }
         });
     },
+    //Begin-Highlight
     sendCreateHighlightMessage: function (tabId, range, className, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "createHighlight",
@@ -124,6 +135,29 @@ var myTabs = {
             highlightId: highlightId
         }, responseCallback);
     },
+    //End-Highlight
+    //Begin-Focus
+    sendIsFocusMessage:function(tabId, highlightId,className, responseCallback){
+        myTabs.sendMessage(tabId, {
+            id : "isFocus",
+            highlightId : highlightId,
+            className : className
+        }, responseCallback);
+    },
+    sendSetFocusMessage:function(tabId, highlightId, className, responseCallback){
+        myTabs.sendMessage(tabId, {
+            id : "setFocus",
+            highlightId : highlightId,
+            className : className
+        }, responseCallback);
+    },
+    sendGetFocusMessage:function(tabId, className, responseCallback){
+        myTabs.sendMessage(tabId, {
+            id: "getFocus",
+            className : className
+        }, responseCallback);
+    },
+    //End-Focus
     sendScrollToMessage: function (tabId, highlightId, responseCallback) {
         myTabs.sendMessage(tabId, {
             id: "scrollTo",

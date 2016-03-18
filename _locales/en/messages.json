@@ -17,6 +17,9 @@
   "remove": {
     "message":"remove"
   },
+  "focus":{
+    "message":"focus"
+  },
   "search": {
     "message":"search"
   },

@@ -63,10 +63,9 @@ var myWeb = {
                         var id = val.key;
                         if(val.value && val.value.length > 0){
                             var xpathRange = JSON.parse(val.value);
-                            var className = "default-4B8192F5FBC945A49212026FF891A28B";
                             myTabs.sendCreateHighlightMessage(myWeb.currentTabID,
                                 xpathRange,
-                                className,
+                                myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
                                 id,
                                 function(state){
                                 });
@@ -78,8 +77,7 @@ var myWeb = {
                     var xpathRange = JSON.parse(obj.xpath);
                     var text = obj.text;
                     var id = obj.id;
-                    var className = "default-4B8192F5FBC945A49212026FF891A28B";
-                    myTabs.sendCreateHighlightMessage(myWeb.currentTabID, xpathRange, className, id,
+                    myTabs.sendCreateHighlightMessage(myWeb.currentTabID, xpathRange,  myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME, id,
                         function(state){
                         }
                     );

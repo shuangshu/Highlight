@@ -3,7 +3,6 @@
  */
 
 var myEventPage = {
-
     initialize:function(){
         chrome.runtime.onInstalled.addListener(myEventPage.onRuntimeInstalled);
         chrome.runtime.onStartup.addListener(myEventPage.onRuntimeStartup);
@@ -43,7 +42,7 @@ var myEventPage = {
             var scripts = 0;
             myTabs.executeScripts(tab.id, function (){
                 scripts++;
-                if(scripts == 8){
+                if(scripts == 9){
                     myWeb.close();
                     myWeb.open();
                 }

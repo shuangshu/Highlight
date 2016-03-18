@@ -2,10 +2,8 @@
  * Created by gft060 on 2016/3/8.
  */
 var myContextMenu = {
-
     currentHighlightID : null,
     currentFocusID : null,
-
     setCurrentHighlightID: function (id) {
         myContextMenu.currentHighlightID = id;
     },
@@ -21,7 +19,7 @@ var myContextMenu = {
     enableMenus:function(enable){
         chrome.commands.getAll(function (commands) {
             commands.forEach(function(command){
-                var id = command.name+".default-4B8192F5FBC945A49212026FF891A28B";
+                var id = command.name+"."+myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME;
                 chrome.contextMenus.update(id,{
                     parentId : '6A7D6A59C4BF4908B3310F97C529B366',
                     enabled : enable
@@ -40,7 +38,7 @@ var myContextMenu = {
             commands.forEach(function(command){
                 var option = {
                     type: "normal",
-                    id: command.name+".default-4B8192F5FBC945A49212026FF891A28B",
+                    id: command.name +"."+ myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
                     parentId: '6A7D6A59C4BF4908B3310F97C529B366',
                     title: command.description,
                     contexts:['all'],
@@ -58,6 +56,9 @@ var myContextMenu = {
             var className = result[2];
             switch (command){
                 case myStringUtility.COMMON_CREATE:
+                    if(info.editable){
+                        return;
+                    }
                     myTabs.sendGetSelectionRangeMessage(tab.id,function(response){
                         if (response &&
                             response.xpathRange &&
@@ -85,17 +86,19 @@ var myContextMenu = {
                     }
                     break;
                 case myStringUtility.COMMON_SEARCH:
-                    myTabs.sendGetHighlightTextByIDMessage(tab.id,myContextMenu.currentHighlightID,function(response){
-                        if (!myStringUtility.isEmpty(response)){
-                            var rangeText = response;
-                            var properties = {
-                                url : "http://116.236.181.98:31415/list?search=" + rangeText
-                            };
-                            myTabs.createTab(properties,function(tab){
-                                console.log(tab);
-                            });
-                        }
-                    });
+                    if(myContextMenu.currentHighlightID){
+                        myTabs.sendGetHighlightTextByIDMessage(tab.id,myContextMenu.currentHighlightID,function(response){
+                            if (!myStringUtility.isEmpty(response)){
+                                var rangeText = response;
+                                var properties = {
+                                    url : "http://116.236.181.98:31415/list?search=" + rangeText
+                                };
+                                myTabs.createTab(properties,function(tab){
+                                    console.log(tab);
+                                });
+                            }
+                        });
+                    }
                     break;
                 case myStringUtility.COMMON_SEARCHALL:
                     myTabs.sendGetHighlightTextByClassMessage(tab.id, className,function(response){
@@ -108,6 +111,13 @@ var myContextMenu = {
                             });
                         }
                     });
+                    break;
+                case myStringUtility.COMMON_FOCUS:
+                    if(myContextMenu.currentHighlightID){
+                        myTabs.sendSetFocusMessage(tab.id, myContextMenu.currentHighlightID, myStringUtility.DEFAULT_FOCUS_CLASS_NAME ,function(response){
+
+                        });
+                    }
                     break;
             }
         }

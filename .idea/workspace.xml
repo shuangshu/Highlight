@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6dba82cd-d006-4979-bd48-8a1355f1e3cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/context/focus.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/256.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/38.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/128.png" afterPath="$PROJECT_DIR$/images/128.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/16.png" afterPath="$PROJECT_DIR$/images/16.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/32.png" afterPath="$PROJECT_DIR$/images/32.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/48.png" afterPath="$PROJECT_DIR$/images/48.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/64.png" afterPath="$PROJECT_DIR$/images/64.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/96.png" afterPath="$PROJECT_DIR$/images/96.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/highlight.css" afterPath="$PROJECT_DIR$/css/highlight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_locales/en/messages.json" afterPath="$PROJECT_DIR$/_locales/en/messages.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_locales/zh_CN/messages.json" afterPath="$PROJECT_DIR$/_locales/zh_CN/messages.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background/contextMenu.js" afterPath="$PROJECT_DIR$/js/background/contextMenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background/eventPage.js" afterPath="$PROJECT_DIR$/js/background/eventPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background/tab.js" afterPath="$PROJECT_DIR$/js/background/tab.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background/web.js" afterPath="$PROJECT_DIR$/js/background/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/context/context.js" afterPath="$PROJECT_DIR$/js/context/context.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/context/focus.js" afterPath="$PROJECT_DIR$/js/context/focus.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/context/highlight.js" afterPath="$PROJECT_DIR$/js/context/highlight.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/option/app.js" afterPath="$PROJECT_DIR$/js/option/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
     </list>
     <ignored path="Highlight.iws" />
@@ -40,28 +33,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="highlight.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/highlight.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.88">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="highlight.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/context/highlight.js">
+      <file leaf-file-name="web.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/background/web.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="173" column="20" selection-start-line="168" selection-start-column="7" selection-end-line="173" selection-end-column="20" />
+              <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
               <folding>
-                <element signature="n#!!block;n#createHighlight#0;n#createHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#updateHighlight#0;n#updateHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#deleteHighlight#0;n#deleteHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#getRange#0;n#getRange#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#isHighlight#0;n#isHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#getHighlightTextByID#0;n#getHighlightTextByID#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
+                <element signature="e#0#39#0" expanded="false" />
+                <element signature="n#!!block;n#onError#0;n#onError#0;n#!!block;n#myWeb#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -70,37 +49,36 @@
       <file leaf-file-name="context.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/context/context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="40" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+            <state vertical-scroll-proportion="-8.533334">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding>
-                <element signature="e#118#521#0" expanded="false" />
-                <element signature="e#563#669#0" expanded="false" />
-                <element signature="e#733#2526#0" expanded="false" />
-                <element signature="e#765#2488#0" expanded="false" />
-                <element signature="e#2574#2620#0" expanded="false" />
-                <element signature="e#2662#2880#0" expanded="false" />
-                <element signature="e#2922#3141#0" expanded="false" />
-                <element signature="e#3177#3457#0" expanded="false" />
-                <element signature="e#3498#3555#0" expanded="false" />
-                <element signature="e#3614#3935#0" expanded="false" />
-                <element signature="e#3973#4028#0" expanded="false" />
-                <element signature="e#4066#4300#0" expanded="false" />
-                <element signature="e#4349#4447#0" expanded="false" />
-                <element signature="e#4481#4529#0" expanded="false" />
-                <element signature="e#4579#4648#0" expanded="false" />
-                <element signature="e#4806#5008#0" expanded="false" />
+                <element signature="e#740#2890#0" expanded="false" />
+                <element signature="e#2938#2984#0" expanded="false" />
+                <element signature="e#3453#3733#0" expanded="false" />
+                <element signature="e#3814#4135#0" expanded="false" />
+                <element signature="e#4173#4228#0" expanded="false" />
+                <element signature="e#4266#4500#0" expanded="false" />
+                <element signature="e#4549#4647#0" expanded="false" />
+                <element signature="e#4681#4729#0" expanded="false" />
+                <element signature="e#4779#4848#0" expanded="false" />
+                <element signature="e#4899#4969#0" expanded="false" />
+                <element signature="e#5054#5115#0" expanded="false" />
+                <element signature="e#5163#5219#0" expanded="false" />
+                <element signature="e#5255#5306#0" expanded="false" />
+                <element signature="e#5359#5561#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="focus.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/context/focus.js">
+      <file leaf-file-name="highlight.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/context/highlight.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.375">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.12947977">
+              <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
               <folding>
-                <element signature="e#0#42#0" expanded="false" />
+                <element signature="n#!!block;n#getHighlightTextByID#0;n#getHighlightTextByID#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#getHighlightTextByClass#0;n#getHighlightTextByClass#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -144,22 +122,22 @@
         <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/js/context/menu.js" />
         <option value="$PROJECT_DIR$/js/background/Utility.js" />
-        <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/js/background/eventPage.js" />
-        <option value="$PROJECT_DIR$/js/background/tab.js" />
         <option value="$PROJECT_DIR$/js/background/collection.js" />
-        <option value="$PROJECT_DIR$/js/background/contextMenu.js" />
-        <option value="$PROJECT_DIR$/js/background/web.js" />
         <option value="$PROJECT_DIR$/js/option/app.js" />
-        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/_locales/en/message.json" />
         <option value="$PROJECT_DIR$/_locales/zh_CN/message.json" />
+        <option value="$PROJECT_DIR$/css/highlight.css" />
+        <option value="$PROJECT_DIR$/js/background/eventPage.js" />
         <option value="$PROJECT_DIR$/_locales/en/messages.json" />
         <option value="$PROJECT_DIR$/_locales/zh_CN/messages.json" />
-        <option value="$PROJECT_DIR$/css/highlight.css" />
-        <option value="$PROJECT_DIR$/js/context/highlight.js" />
-        <option value="$PROJECT_DIR$/js/context/context.js" />
+        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/context/focus.js" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/js/background/tab.js" />
+        <option value="$PROJECT_DIR$/js/background/contextMenu.js" />
+        <option value="$PROJECT_DIR$/js/background/web.js" />
+        <option value="$PROJECT_DIR$/js/context/context.js" />
+        <option value="$PROJECT_DIR$/js/context/highlight.js" />
       </list>
     </option>
   </component>
@@ -245,7 +223,93 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="option" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="context" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="background" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_locales" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zh_CN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Highlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_locales" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -261,7 +325,7 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="E:/VQ/Highlight" />
+    <property name="last_opened_file_path" value="E:/SourceCode/super-simple-highlighter" />
     <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="jsx.switch.disabled" value="true" />
@@ -345,40 +409,21 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -393,7 +438,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -403,14 +448,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding>
-            <element signature="e#89#716#0" expanded="false" />
-            <element signature="e#760#797#0" expanded="false" />
-            <element signature="e#830#867#0" expanded="false" />
-            <element signature="e#932#1255#0" expanded="false" />
-            <element signature="e#1308#1890#0" expanded="false" />
-            <element signature="e#1934#2128#0" expanded="false" />
-            <element signature="e#2178#2200#0" expanded="false" />
-            <element signature="e#2243#2265#0" expanded="false" />
+            <element signature="e#88#715#0" expanded="false" />
+            <element signature="e#759#796#0" expanded="false" />
+            <element signature="e#829#866#0" expanded="false" />
+            <element signature="e#931#1254#0" expanded="false" />
+            <element signature="e#1307#1889#0" expanded="false" />
+            <element signature="e#1933#2127#0" expanded="false" />
+            <element signature="e#2177#2199#0" expanded="false" />
+            <element signature="e#2242#2264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -460,6 +505,9 @@
             <element signature="n#!!block;n#sendGetRangeTextMessage#0;n#sendGetRangeTextMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendSelectHighlightMessage#0;n#sendSelectHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendIsHighlightMessage#0;n#sendIsHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendIsFocusMessage#0;n#sendIsFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendSetFocusMessage#0;n#sendSetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendGetFocusMessage#0;n#sendGetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendScrollToMessage#0;n#sendScrollToMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -471,21 +519,20 @@
           <caret line="18" column="79" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="79" />
           <folding>
             <element signature="e#118#521#0" expanded="false" />
-            <element signature="e#563#669#0" expanded="false" />
-            <element signature="e#733#2526#0" expanded="false" />
-            <element signature="e#765#2488#0" expanded="false" />
-            <element signature="e#2574#2620#0" expanded="false" />
-            <element signature="e#2662#2880#0" expanded="false" />
-            <element signature="e#2922#3141#0" expanded="false" />
-            <element signature="e#3177#3457#0" expanded="false" />
-            <element signature="e#3498#3555#0" expanded="false" />
-            <element signature="e#3614#3935#0" expanded="false" />
-            <element signature="e#3973#4028#0" expanded="false" />
-            <element signature="e#4066#4300#0" expanded="false" />
-            <element signature="e#4349#4447#0" expanded="false" />
-            <element signature="e#4481#4529#0" expanded="false" />
-            <element signature="e#4579#4648#0" expanded="false" />
-            <element signature="e#4806#5008#0" expanded="false" />
+            <element signature="e#563#676#0" expanded="false" />
+            <element signature="e#740#2890#0" expanded="false" />
+            <element signature="e#772#2852#0" expanded="false" />
+            <element signature="e#2938#2984#0" expanded="false" />
+            <element signature="e#3026#3200#0" expanded="false" />
+            <element signature="e#3242#3417#0" expanded="false" />
+            <element signature="e#3453#3733#0" expanded="false" />
+            <element signature="e#3814#4135#0" expanded="false" />
+            <element signature="e#4173#4228#0" expanded="false" />
+            <element signature="e#4266#4500#0" expanded="false" />
+            <element signature="e#4549#4647#0" expanded="false" />
+            <element signature="e#4681#4729#0" expanded="false" />
+            <element signature="e#4779#4848#0" expanded="false" />
+            <element signature="e#5359#5561#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -506,14 +553,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
           <folding>
-            <element signature="e#89#716#0" expanded="false" />
-            <element signature="e#760#797#0" expanded="false" />
-            <element signature="e#830#867#0" expanded="false" />
-            <element signature="e#932#1255#0" expanded="false" />
-            <element signature="e#1308#1890#0" expanded="false" />
-            <element signature="e#1934#2128#0" expanded="false" />
-            <element signature="e#2178#2200#0" expanded="false" />
-            <element signature="e#2243#2265#0" expanded="false" />
+            <element signature="e#88#715#0" expanded="false" />
+            <element signature="e#759#796#0" expanded="false" />
+            <element signature="e#829#866#0" expanded="false" />
+            <element signature="e#931#1254#0" expanded="false" />
+            <element signature="e#1307#1889#0" expanded="false" />
+            <element signature="e#1933#2127#0" expanded="false" />
+            <element signature="e#2177#2199#0" expanded="false" />
+            <element signature="e#2242#2264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,6 +596,9 @@
             <element signature="n#!!block;n#sendGetRangeTextMessage#0;n#sendGetRangeTextMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendSelectHighlightMessage#0;n#sendSelectHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendIsHighlightMessage#0;n#sendIsHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendIsFocusMessage#0;n#sendIsFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendSetFocusMessage#0;n#sendSetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendGetFocusMessage#0;n#sendGetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendScrollToMessage#0;n#sendScrollToMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -559,14 +609,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#89#716#0" expanded="false" />
-            <element signature="e#760#797#0" expanded="false" />
-            <element signature="e#830#867#0" expanded="false" />
-            <element signature="e#932#1255#0" expanded="false" />
-            <element signature="e#1308#1890#0" expanded="false" />
-            <element signature="e#1934#2128#0" expanded="false" />
-            <element signature="e#2178#2200#0" expanded="false" />
-            <element signature="e#2243#2265#0" expanded="false" />
+            <element signature="e#88#715#0" expanded="false" />
+            <element signature="e#759#796#0" expanded="false" />
+            <element signature="e#829#866#0" expanded="false" />
+            <element signature="e#931#1254#0" expanded="false" />
+            <element signature="e#1307#1889#0" expanded="false" />
+            <element signature="e#1933#2127#0" expanded="false" />
+            <element signature="e#2177#2199#0" expanded="false" />
+            <element signature="e#2242#2264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,7 +631,7 @@
             <element signature="n#!!block;n#removeMenus#0;n#removeMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#removeMenu#0;n#removeMenu#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#enableMenus#0;n#enableMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="e#541#876#0" expanded="false" />
+            <element signature="e#539#879#0" expanded="false" />
             <element signature="n#!!block;n#createMenus#0;n#createMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#onClicked#0;n#onClicked#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
           </folding>
@@ -608,6 +658,9 @@
             <element signature="n#!!block;n#sendGetRangeTextMessage#0;n#sendGetRangeTextMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendSelectHighlightMessage#0;n#sendSelectHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendIsHighlightMessage#0;n#sendIsHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendIsFocusMessage#0;n#sendIsFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendSetFocusMessage#0;n#sendSetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendGetFocusMessage#0;n#sendGetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendScrollToMessage#0;n#sendScrollToMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -619,21 +672,20 @@
           <caret line="84" column="55" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
           <folding>
             <element signature="e#118#521#0" expanded="false" />
-            <element signature="e#563#669#0" expanded="false" />
-            <element signature="e#733#2526#0" expanded="false" />
-            <element signature="e#765#2488#0" expanded="false" />
-            <element signature="e#2574#2620#0" expanded="false" />
-            <element signature="e#2662#2880#0" expanded="false" />
-            <element signature="e#2922#3141#0" expanded="false" />
-            <element signature="e#3177#3457#0" expanded="false" />
-            <element signature="e#3498#3555#0" expanded="false" />
-            <element signature="e#3614#3935#0" expanded="false" />
-            <element signature="e#3973#4028#0" expanded="false" />
-            <element signature="e#4066#4300#0" expanded="false" />
-            <element signature="e#4349#4447#0" expanded="false" />
-            <element signature="e#4481#4529#0" expanded="false" />
-            <element signature="e#4579#4648#0" expanded="false" />
-            <element signature="e#4806#5008#0" expanded="false" />
+            <element signature="e#563#676#0" expanded="false" />
+            <element signature="e#740#2890#0" expanded="false" />
+            <element signature="e#772#2852#0" expanded="false" />
+            <element signature="e#2938#2984#0" expanded="false" />
+            <element signature="e#3026#3200#0" expanded="false" />
+            <element signature="e#3242#3417#0" expanded="false" />
+            <element signature="e#3453#3733#0" expanded="false" />
+            <element signature="e#3814#4135#0" expanded="false" />
+            <element signature="e#4173#4228#0" expanded="false" />
+            <element signature="e#4266#4500#0" expanded="false" />
+            <element signature="e#4549#4647#0" expanded="false" />
+            <element signature="e#4681#4729#0" expanded="false" />
+            <element signature="e#4779#4848#0" expanded="false" />
+            <element signature="e#5359#5561#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,14 +695,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="73" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
           <folding>
-            <element signature="e#89#716#0" expanded="false" />
-            <element signature="e#760#797#0" expanded="false" />
-            <element signature="e#830#867#0" expanded="false" />
-            <element signature="e#932#1255#0" expanded="false" />
-            <element signature="e#1308#1890#0" expanded="false" />
-            <element signature="e#1934#2128#0" expanded="false" />
-            <element signature="e#2178#2200#0" expanded="false" />
-            <element signature="e#2243#2265#0" expanded="false" />
+            <element signature="e#88#715#0" expanded="false" />
+            <element signature="e#759#796#0" expanded="false" />
+            <element signature="e#829#866#0" expanded="false" />
+            <element signature="e#931#1254#0" expanded="false" />
+            <element signature="e#1307#1889#0" expanded="false" />
+            <element signature="e#1933#2127#0" expanded="false" />
+            <element signature="e#2177#2199#0" expanded="false" />
+            <element signature="e#2242#2264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,9 +715,9 @@
             <element signature="n#!!block;n#createHighlight#0;n#createHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#updateHighlight#0;n#updateHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#deleteHighlight#0;n#deleteHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#getRange#0;n#getRange#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#isHighlight#0;n#isHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getHighlightTextByID#0;n#getHighlightTextByID#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#getHighlightTextByClass#0;n#getHighlightTextByClass#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,7 +732,7 @@
             <element signature="n#!!block;n#removeMenus#0;n#removeMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#removeMenu#0;n#removeMenu#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#enableMenus#0;n#enableMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="e#541#876#0" expanded="false" />
+            <element signature="e#539#879#0" expanded="false" />
             <element signature="n#!!block;n#createMenus#0;n#createMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#onClicked#0;n#onClicked#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
           </folding>
@@ -772,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/option/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -826,23 +871,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_locales/zh_CN/messages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.96">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.3673938">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_locales/en/messages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.72">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.34902412">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.347876">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/highlight.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.64">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/context/xpath.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3699422">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/context/stylesheet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.10726257">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding>
             <element signature="n#!!block;n#setHighlightStyle#0;n#setHighlightStyle#0;n#!!block;n#myStylesheet#0;n#!!top" expanded="false" />
@@ -851,21 +928,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/background/web.js">
+    <entry file="file://$PROJECT_DIR$/js/context/focus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8214286">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.053631283">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding>
-            <element signature="e#0#39#0" expanded="false" />
-            <element signature="n#!!block;n#onError#0;n#onError#0;n#!!block;n#myWeb#0;n#!!top" expanded="false" />
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="n#!!block;n#isFocus#0;n#isFocus#0;n#!!block;n#myFocus#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#setFocus#0;n#setFocus#0;n#!!block;n#myFocus#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#getFocus#0;n#getFocus#0;n#!!block;n#myFocus#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/background/contextMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding>
+            <element signature="e#4323#4760#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/background/eventPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#88#715#0" expanded="false" />
+            <element signature="e#759#796#0" expanded="false" />
+            <element signature="e#829#866#0" expanded="false" />
+            <element signature="e#931#1254#0" expanded="false" />
+            <element signature="e#1307#1889#0" expanded="false" />
+            <element signature="e#1933#2127#0" expanded="false" />
+            <element signature="e#2177#2199#0" expanded="false" />
+            <element signature="e#2242#2264#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/background/tab.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.071428575">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
           <folding>
             <element signature="n#!!block;n#executeScripts#0;n#executeScripts#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#insertCSS#0;n#insertCSS#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
@@ -882,117 +988,55 @@
             <element signature="n#!!block;n#sendGetRangeTextMessage#0;n#sendGetRangeTextMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendSelectHighlightMessage#0;n#sendSelectHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendIsHighlightMessage#0;n#sendIsHighlightMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendIsFocusMessage#0;n#sendIsFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendSetFocusMessage#0;n#sendSetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#sendGetFocusMessage#0;n#sendGetFocusMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#sendScrollToMessage#0;n#sendScrollToMessage#0;n#!!block;n#myTabs#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/background/eventPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23214285">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="e#89#716#0" expanded="false" />
-            <element signature="e#760#797#0" expanded="false" />
-            <element signature="e#830#867#0" expanded="false" />
-            <element signature="e#932#1255#0" expanded="false" />
-            <element signature="e#1308#1890#0" expanded="false" />
-            <element signature="e#1934#2128#0" expanded="false" />
-            <element signature="e#2178#2200#0" expanded="false" />
-            <element signature="e#2243#2265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/background/contextMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08928572">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!block;n#setCurrentHighlightID#0;n#setCurrentHighlightID#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#setFocusID#0;n#setFocusID#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#removeMenus#0;n#removeMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#removeMenu#0;n#removeMenu#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#enableMenus#0;n#enableMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="e#541#876#0" expanded="false" />
-            <element signature="n#!!block;n#createMenus#0;n#createMenus#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#onClicked#0;n#onClicked#0;n#!!block;n#myContextMenu#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11825488">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/context/xpath.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5535714">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <element signature="e#1306#1586#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/highlight.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.88">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/context/highlight.js">
+    <entry file="file://$PROJECT_DIR$/js/background/web.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="173" column="20" selection-start-line="168" selection-start-column="7" selection-end-line="173" selection-end-column="20" />
+          <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
           <folding>
-            <element signature="n#!!block;n#createHighlight#0;n#createHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#updateHighlight#0;n#updateHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#deleteHighlight#0;n#deleteHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#getRange#0;n#getRange#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#isHighlight#0;n#isHighlight#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#getHighlightTextByID#0;n#getHighlightTextByID#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
+            <element signature="e#0#39#0" expanded="false" />
+            <element signature="n#!!block;n#onError#0;n#onError#0;n#!!block;n#myWeb#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/context/context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="40" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+        <state vertical-scroll-proportion="-8.533334">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding>
-            <element signature="e#118#521#0" expanded="false" />
-            <element signature="e#563#669#0" expanded="false" />
-            <element signature="e#733#2526#0" expanded="false" />
-            <element signature="e#765#2488#0" expanded="false" />
-            <element signature="e#2574#2620#0" expanded="false" />
-            <element signature="e#2662#2880#0" expanded="false" />
-            <element signature="e#2922#3141#0" expanded="false" />
-            <element signature="e#3177#3457#0" expanded="false" />
-            <element signature="e#3498#3555#0" expanded="false" />
-            <element signature="e#3614#3935#0" expanded="false" />
-            <element signature="e#3973#4028#0" expanded="false" />
-            <element signature="e#4066#4300#0" expanded="false" />
-            <element signature="e#4349#4447#0" expanded="false" />
-            <element signature="e#4481#4529#0" expanded="false" />
-            <element signature="e#4579#4648#0" expanded="false" />
-            <element signature="e#4806#5008#0" expanded="false" />
+            <element signature="e#740#2890#0" expanded="false" />
+            <element signature="e#2938#2984#0" expanded="false" />
+            <element signature="e#3453#3733#0" expanded="false" />
+            <element signature="e#3814#4135#0" expanded="false" />
+            <element signature="e#4173#4228#0" expanded="false" />
+            <element signature="e#4266#4500#0" expanded="false" />
+            <element signature="e#4549#4647#0" expanded="false" />
+            <element signature="e#4681#4729#0" expanded="false" />
+            <element signature="e#4779#4848#0" expanded="false" />
+            <element signature="e#4899#4969#0" expanded="false" />
+            <element signature="e#5054#5115#0" expanded="false" />
+            <element signature="e#5163#5219#0" expanded="false" />
+            <element signature="e#5255#5306#0" expanded="false" />
+            <element signature="e#5359#5561#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/context/focus.js">
+    <entry file="file://$PROJECT_DIR$/js/context/highlight.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.375">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.12947977">
+          <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
           <folding>
-            <element signature="e#0#42#0" expanded="false" />
+            <element signature="n#!!block;n#getHighlightTextByID#0;n#getHighlightTextByID#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#getHighlightTextByClass#0;n#getHighlightTextByClass#0;n#!!block;n#myHighlight#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
