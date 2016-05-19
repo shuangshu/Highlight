@@ -6,14 +6,15 @@ var myWeb = {
     socket : null,
     currentURL : null,
     currentTabID : null,
-    open : function(){
+
+    open : function(onopen,onclose){
+        "use strict";
         try{
             if(myWeb.socket == null){
                 myWeb.socket = new WebSocket('ws://localhost:12001');
-                myWeb.socket.onerror = myWeb.onError;
-                myWeb.socket.onopen = myWeb.onOpen;
-                myWeb.socket.onclose = myWeb.onClose;
                 myWeb.socket.onmessage = myWeb.onMessage;
+                myWeb.socket.onopen = onopen;
+                myWeb.socket.onclose = onclose;
             }
         }
         catch (e){
@@ -28,31 +29,33 @@ var myWeb = {
         myWeb.socket = null;
     },
     sendMsg : function(data){
-        if(!myWeb.socket || myWeb.socket.readyState != 1){
-            myWeb.close();//try again
-            myWeb.open();
+        "use strict";
+        if(myWeb.socket && myWeb.socket.readyState != 1) {
+            myWeb.socket = null;
         }
-        if(myWeb.socket.readyState != 1){
-            setTimeout(function(){
+        if(!myWeb.socket){
+            myWeb.open(function(event){
                 myWeb.socket.send(data);
-            },1000);
-        }else {
+            },function(event){
+            });
+        }
+        else{
             myWeb.socket.send(data);
         }
     },
-    onOpen : function(event){
-        if(myWeb.currentURL == null)
+    queryURL:function(){
+        "use strict";
+        if(myWeb.currentURL == null){
             return;
+        }
         var msg = {
             "key":"QUERY",
             "value": myWeb.currentURL
         };
         myWeb.sendMsg(JSON.stringify(msg));
     },
-    onClose : function(event){
-        console.log('onClose',event);
-    },
     onMessage : function(event){
+        "use strict";
         if(!event.data || event.data.length == 0)
             return;
         try{
@@ -63,12 +66,16 @@ var myWeb = {
                         var id = val.key;
                         if(val.value && val.value.length > 0){
                             var xpathRange = JSON.parse(val.value);
-                            myTabs.sendCreateHighlightMessage(myWeb.currentTabID,
-                                xpathRange,
-                                myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
-                                id,
-                                function(state){
-                                });
+                            if(myWeb.currentTabID){
+                                myTabs.sendCreateHighlightMessage(myWeb.currentTabID,
+                                    xpathRange,
+                                    myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
+                                    id,
+                                    function(state){
+                                        //TODO
+                                    }
+                                );
+                            }
                         }
                     });
                     break;
@@ -77,25 +84,32 @@ var myWeb = {
                     var xpathRange = JSON.parse(obj.xpath);
                     var text = obj.text;
                     var id = obj.id;
-                    myTabs.sendCreateHighlightMessage(myWeb.currentTabID, xpathRange,  myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME, id,
-                        function(state){
-                        }
-                    );
+                    if(myWeb.currentTabID){
+                        myTabs.sendCreateHighlightMessage(myWeb.currentTabID,
+                            xpathRange,
+                            myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
+                            id,
+                            function(state){
+                                //TODO
+                            }
+                        );
+                    }
                     break;
                 case "DELETE":
                     var id = data.value;
-                    myTabs.sendDeleteHighlightMessage(myWeb.currentTabID, id,
-                        function(state){
-                        }
-                    );
+                    if(myWeb.currentTabID) {
+                        myTabs.sendDeleteHighlightMessage(myWeb.currentTabID,
+                            id,
+                            function (state) {
+                                //TODO
+                            }
+                        );
+                    }
                     break;
             }
         }
         catch (error){
             console.log(error);
         }
-    },
-    onError: function(event){
-        console.log('onError',event);
     }
 };

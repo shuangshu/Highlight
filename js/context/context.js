@@ -5,6 +5,7 @@
 var myContext = {
     highlightClassName: null,
     initialize : function(){
+        "use strict";
         myContext.highlightClassName = myStringUtility.createUUID();
         chrome.storage.onChanged.addListener(myContext.onChanged);
         chrome.runtime.onMessage.addListener(myContext.onRuntimeMessage);
@@ -14,16 +15,18 @@ var myContext = {
         }, "." + myContext.highlightClassName);
     },
     getHighlightID : function (element) {
+        "use strict";
         if (!element.firstSpan) {
             return null;
         }
         return element.firstSpan.id;
     },
     onRuntimeMessage : function(message, sender, sendResponse){
+        "use strict";
         var response;
         switch (message.id){
             case "createHighlight":
-                response = myContext.createHighlight(message.range, message.highlightId, message.className);
+                response = myContext.createHighlight(message.range, message.highlightId, message.className) !==null;
                 break;
             case "updateHighlight":
                 response = myContext.updateHighlight(message.highlightId, message.className);
@@ -72,16 +75,19 @@ var myContext = {
         sendResponse(response);
     },
     onChanged : function (changes, namespace) {
+        "use strict";
         console.log("storage change");
     },
     onMouseEnterHighlight : function () {
+        "use strict";
         var id = myContext.getHighlightID(this);
         chrome.runtime.sendMessage({
-            id: "onMouseLeaveHighlight",
+            id: "onMouseEnterHighlight",
             highlightId: id
         });
     },
     onMouseLeaveHighlight : function () {
+        "use strict";
         var id =  myContext.getHighlightID(this);
         chrome.runtime.sendMessage({
             id: "onMouseLeaveHighlight",
@@ -89,7 +95,8 @@ var myContext = {
         });
     },
     getSelectionRange : function(){
-        var range;
+        "use strict";
+        var range = null;
         var selection = window.getSelection();
         if (selection.isCollapsed) {
             range = new Range();

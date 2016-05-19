@@ -3,14 +3,14 @@
  */
 var myXPath = {
     getXPathByNode :function(node){
+        "use strict";
         var paths = [];
-        for (; node && (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE); node = node.parentNode)
-        {
+        for (; node && (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE); node = node.parentNode) {
             var index = 0;
             if (node.id) {
                 var selector = '[id="' + node.id + '"]';
-                var size = document.querySelectorAll(selector).length;
-                if (size === 1) {
+                var length = document.querySelectorAll(selector).length;
+                if (length === 1) {
                     paths.splice(0, 0, '/*[@id="' + node.id + '"][1]');
                     break;
                 }
@@ -37,14 +37,25 @@ var myXPath = {
             endOffset: range.endOffset,
             collapsed: range.collapsed
         }
+        var title = "";
+        var tagTitle = document.getElementsByTagName("title")[0];
+        if(tagTitle && tagTitle.innerText){
+            title = tagTitle.innerText.substring(0,100);
+        }
         return{
             xpathRange : xpathRange,
-            rangeText : range.toString()
+            rangeText : range.toString(),
+            title: title
         };
     },
     createRangeByXPathRange: function (xpathRange) {
+        "use strict";
         var startContainer, endContainer, endOffset, evaluator = new XPathEvaluator();
-        startContainer = evaluator.evaluate(xpathRange.startContainerPath,document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+        startContainer = evaluator.evaluate(xpathRange.startContainerPath,
+            document.documentElement,
+            null,
+            XPathResult.FIRST_ORDERED_NODE_TYPE,
+            null);
         if (!startContainer.singleNodeValue) {
             return null;
         }
@@ -52,8 +63,12 @@ var myXPath = {
             endContainer = startContainer;
             endOffset = xpathRange.startOffset;
         }
-        else{
-            endContainer = evaluator.evaluate(xpathRange.endContainerPath, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+        else {
+            endContainer = evaluator.evaluate(xpathRange.endContainerPath,
+                document.documentElement,
+                null,
+                XPathResult.FIRST_ORDERED_NODE_TYPE,
+                null);
             if (!endContainer.singleNodeValue) {
                 return null;
             }

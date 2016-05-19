@@ -5,18 +5,23 @@ var myContextMenu = {
     currentHighlightID : null,
     currentFocusID : null,
     setCurrentHighlightID: function (id) {
+        "use strict";
         myContextMenu.currentHighlightID = id;
     },
     setFocusID : function(id){
+        "use strict";
         myContextMenu.currentFocusID = id;
     },
     removeMenus:function(){
+        "use strict";
         chrome.contextMenus.removeAll();
     },
     removeMenu : function(id){
+        "use strict";
         chrome.contextMenus.remove(id);
     },
     enableMenus:function(enable){
+        "use strict";
         chrome.commands.getAll(function (commands) {
             commands.forEach(function(command){
                 var id = command.name+"."+myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME;
@@ -28,6 +33,7 @@ var myContextMenu = {
         });
     },
     createMenus:function(){
+        "use strict";
         chrome.contextMenus.removeAll();
         var parentId = chrome.contextMenus.create({
             "id": "6A7D6A59C4BF4908B3310F97C529B366",
@@ -36,19 +42,24 @@ var myContextMenu = {
         });
         chrome.commands.getAll(function (commands) {
             commands.forEach(function(command){
-                var option = {
-                    type: "normal",
-                    id: command.name +"."+ myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
-                    parentId: '6A7D6A59C4BF4908B3310F97C529B366',
-                    title: command.description,
-                    contexts:['all'],
-                    enabled : true
+                if(command.description.length > 0){
+                    var option = {
+                        type: "normal",
+                        id: command.name +"."+ myStringUtility.DEFAULT_HIGHLIGHT_CLASS_NAME,
+                        parentId: '6A7D6A59C4BF4908B3310F97C529B366',
+                        title: command.description,
+                        contexts:['all'],
+                        enabled : true
+                    }
+                    chrome.contextMenus.create(option);
                 }
-                addMenuId = chrome.contextMenus.create(option);
             });
         });
     },
     onClicked:function (info,tab) {
+        "use strict";
+        myWeb.currentURL = tab.url;
+        myWeb.currentTabID = tab.id;
         var regExp = new RegExp("^(.+)\\.(.+)");
         var result = regExp.exec(info.menuItemId);
         if(result && result.length ==3){
@@ -66,6 +77,7 @@ var myContextMenu = {
                             var data = {
                                 xpath : JSON.stringify(response.xpathRange),
                                 text : response.rangeText,
+                                title : response.title.length > 0 ? response.title : tab.url.substring(0,100),
                                 url : tab.url,
                             };
                             var msg = {
@@ -115,7 +127,6 @@ var myContextMenu = {
                 case myStringUtility.COMMON_FOCUS:
                     if(myContextMenu.currentHighlightID){
                         myTabs.sendSetFocusMessage(tab.id, myContextMenu.currentHighlightID, myStringUtility.DEFAULT_FOCUS_CLASS_NAME ,function(response){
-
                         });
                     }
                     break;

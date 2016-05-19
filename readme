@@ -1,0 +1,1 @@
+1. 右击 Chrome 桌面快捷方式，选择-"属性"-"快捷方式"，然后在"目标"一栏尾部添加参数 --enable-easy-off-store-extension-install ，然后再运行浏览器就可以像以前那样正常安装 Web Store 之外的第三方扩展应用及脚本程序了。

@@ -95,41 +95,48 @@ var myTabs = {
         }, responseCallback);
     },
     sendDeleteHighlightMessage: function (tabId, highlightId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "deleteHighlight",
             highlightId: highlightId
         }, responseCallback);
     },
     sendGetSelectionRangeMessage: function (tabId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "getSelectionRange"
         }, responseCallback);
     },
     sendGetHighlightTextByIDMessage: function (tabId, highlightId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "getHighlightTextByID",
             highlightId: highlightId
         }, responseCallback);
     },
     sendGetHighlightTextByClassMessage: function (tabId,className, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "getHighlightTextByClass",
             className: className
         }, responseCallback);
     },
     sendGetRangeTextMessage: function (tabId, xpathRange, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "getRangeText",
             range: xpathRange
         }, responseCallback);
     },
     sendSelectHighlightMessage: function (tabId, documentId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "selectHighlight",
             highlightId: documentId,
         }, responseCallback);
     },
     sendIsHighlightMessage: function (tabId, highlightId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "isHighlight",
             highlightId: highlightId
@@ -138,6 +145,7 @@ var myTabs = {
     //End-Highlight
     //Begin-Focus
     sendIsFocusMessage:function(tabId, highlightId,className, responseCallback){
+        "use strict";
         myTabs.sendMessage(tabId, {
             id : "isFocus",
             highlightId : highlightId,
@@ -145,6 +153,7 @@ var myTabs = {
         }, responseCallback);
     },
     sendSetFocusMessage:function(tabId, highlightId, className, responseCallback){
+        "use strict";
         myTabs.sendMessage(tabId, {
             id : "setFocus",
             highlightId : highlightId,
@@ -152,6 +161,7 @@ var myTabs = {
         }, responseCallback);
     },
     sendGetFocusMessage:function(tabId, className, responseCallback){
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "getFocus",
             className : className
@@ -159,6 +169,7 @@ var myTabs = {
     },
     //End-Focus
     sendScrollToMessage: function (tabId, highlightId, responseCallback) {
+        "use strict";
         myTabs.sendMessage(tabId, {
             id: "scrollTo",
             fragment: highlightId
