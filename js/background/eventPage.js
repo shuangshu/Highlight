@@ -41,13 +41,13 @@ var myEventPage = {
         myWeb.currentTabID = tab.id;
         if(changeInfo.status === "complete"){
             myTabs.insertCSS(tab.id,function(){
-            });
-            var scripts = 0;
-            myTabs.executeScripts(tab.id, function (){
-                scripts++;
-                if(scripts == 9){
-                    myWeb.queryURL();
-                }
+                var scripts = 0;
+                myTabs.executeScripts(tab.id, function (){
+                    scripts++;
+                    if(scripts == 9){
+                        myWeb.queryURL();
+                    }
+                });
             });
         }
     },

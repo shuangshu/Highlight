@@ -1,21 +1,25 @@
 /**
  * Created by gft060 on 2016/3/8.
+ * http://stackoverflow.com/questions/3454526/how-to-calculate-the-_xpath-position-of-an-element-using-javascript
  */
 var myXPath = {
     getXPathByNode :function(node){
         "use strict";
         var paths = [];
-        for (; node && (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE); node = node.parentNode) {
+        for (; node && (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE); node = node.parentNode)
+        {
             var index = 0;
-            if (node.id) {
-                var selector = '[id="' + node.id + '"]';
-                var length = document.querySelectorAll(selector).length;
-                if (length === 1) {
-                    paths.splice(0, 0, '/*[@id="' + node.id + '"][1]');
-                    break;
-                }
-            }
-            for (var sibling = node.previousSibling; sibling; sibling = sibling.previousSibling) {
+            //if (node.id)
+            //{
+            //    var selector = '[id="' + node.id + '"]';
+            //    var length = document.querySelectorAll(selector).length;
+            //    if (length === 1) {
+            //        paths.splice(0, 0, '/*[@id="' + node.id + '"][1]');
+            //        break;
+            //    }
+            //}
+            for (var sibling = node.previousSibling; sibling; sibling = sibling.previousSibling)
+            {
                 if (sibling.nodeType === Node.DOCUMENT_TYPE_NODE) {
                     continue;
                 }

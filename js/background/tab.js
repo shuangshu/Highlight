@@ -4,7 +4,6 @@
 var myTabs = {
 
     executeScripts : function(tabId, callback){
-        var array = [];
         [
             "static/js/jquery-2.1.1.min.js",
             "static/js/jquery.stylesheet.min.js",
@@ -24,13 +23,11 @@ var myTabs = {
         });
     },
     insertCSS : function(tabId,callback){
-        var array = [];
         [
-            "css/highlight.css",
-            "css/bootstrap.min.css"
+            "css/highlight.css"
         ].forEach(function (file) {
             var detail = {
-                file : "css/highlight.css",
+                file : file,
                 allFrames : false
             }
             chrome.tabs.insertCSS(tabId, detail, callback);

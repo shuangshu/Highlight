@@ -78,7 +78,7 @@ var myContextMenu = {
                                 xpath : JSON.stringify(response.xpathRange),
                                 text : response.rangeText,
                                 title : response.title.length > 0 ? response.title : tab.url.substring(0,100),
-                                url : tab.url,
+                                url : tab.url
                             };
                             var msg = {
                                 key : command,

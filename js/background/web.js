@@ -62,6 +62,7 @@ var myWeb = {
             var data = JSON.parse(event.data);
             switch (data.key){
                 case "QUERY":
+                    data.value = data.value.reverse();
                     data.value.forEach(function (val) {
                         var id = val.key;
                         if(val.value && val.value.length > 0){
